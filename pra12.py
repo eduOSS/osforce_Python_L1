@@ -5,6 +5,7 @@ def decorator_whith_params_and_func_args(arg_of_decorator):
             func(*args, **kwargs)
             print "end"
             print arg_of_decorator, func, args,kwargs
+	    return arg_of_decorator
         return handle_args
     return handle_func
 
@@ -13,4 +14,4 @@ def decorator_whith_params_and_func_args(arg_of_decorator):
 def foo4(a, b=2):
     print "Content"
 
-foo4(1, b=3)
+print foo4(1, b=3)
