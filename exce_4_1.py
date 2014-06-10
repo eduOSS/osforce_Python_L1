@@ -17,8 +17,8 @@ class Rectangle:
 	self.b = b
 	self.c = c
 	self.d = d
-        self.a = Point(4,5)
-        a = Point(5,4)
+        #self.a = Point(4,5)
+        #a = Point(5,4)
     def area(self):
 	hei = a.y - c.y 
 	len = b.x - a.x
@@ -26,4 +26,6 @@ class Rectangle:
 r = Rectangle(a,b,c,d)
 
 print r.area()
-print a.x
+#print a.x 
+# line 20,21,29 are commands for veryfying that an instance outside a class cannot be changed in any class. 
+# the result of line 29 is 1, so line 20 and 21 cann't change line 9 
