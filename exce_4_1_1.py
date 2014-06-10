@@ -12,10 +12,6 @@ c = Point(1,2)
 d = Point(4,2)
 
 class Rectangle:
-    w1 = None 
-    x1 = None 
-    y1 = None 
-    z1 = None 
     def __init__(self,w1,x1,y1,z1):
 	self.w1 = w1
 	self.x1 = x1
