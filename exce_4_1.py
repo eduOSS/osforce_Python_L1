@@ -17,11 +17,13 @@ class Rectangle:
 	self.b = b
 	self.c = c
 	self.d = d
+        self.a = Point(4,5)
+        a = Point(5,4)
     def area(self):
 	hei = a.y - c.y 
 	len = b.x - a.x
 	return len * hei 
-
 r = Rectangle(a,b,c,d)
 
 print r.area()
+print a.x
