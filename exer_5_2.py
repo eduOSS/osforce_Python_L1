@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #coding:utf-8
 from bs4 import BeautifulSoup
-import urllib2,sys,os,urllib,threading,httplib,json,re
+import urllib2,sys,os,urllib,threading,httplib,re
 import time,multiprocessing
 
 #tag_cols = soup.findAll("table",{"class":"tagCol"}) # find all the tag cloums
@@ -27,6 +27,7 @@ class producer(multiprocessing.Process):#the function of one producer is to get 
 		     s0= tds[i].string #get the number i's tag name
 		     s=get_the_right_coding(s0)
 		     tags_name.put(s)#append the variable pics_url to the list 
+		     time.sleep(0.5)
 		     i+=1
 	    except:
 		print 'finish getting all pics url in one column'
@@ -42,6 +43,7 @@ class consumer(multiprocessing.Process): # the function of one consumer is to do
 	for i in range(len(pics_url_in)):
 	    pic_url=pics_url_in[i]['src']
             urllib.urlretrieve(pic_url,"./img/"+tag_name+"/"+pic_url[-12:])
+            time.sleep(0.5)
 
 p=producer()
 c=consumer()
